@@ -1,0 +1,83 @@
+package sehirturu;
+
+import java.util.LinkedList;
+import java.util.ListIterator;
+import java.util.Scanner;
+
+public class SehirTuru {
+    public static void main(String[] args) {
+        LinkedList<String> sehirler = new LinkedList<>();
+        sehirler.add("Ankara");
+        sehirler.add("Istanbul");
+        sehirler.add("Izmir");
+        sehirleri_turla(sehirler);
+    }
+    
+    public static void islemleri_bastir(){
+        String islemler="1 - İslemleri Bastir\n"
+                       +"2 - Bir Sonraki Sehre Git\n"
+                       +"3 - Bir Onceki Sehre Git\n"
+                       +"0 - Uygulamadan Cik";
+        System.out.println(islemler);
+    }
+    
+    public static void sehirleri_turla(LinkedList<String> sehirler){
+        ListIterator iterator = sehirler.listIterator();
+        islemleri_bastir();
+        Scanner scan=new Scanner(System.in);
+        boolean cikis = false;
+        boolean ileri=true; //Ileri True, Geri False
+        while(!cikis){
+            System.out.print("\nIslem Seciniz: ");
+            int islem_secimi=scan.nextInt();
+            switch (islem_secimi){
+                case 1:
+                    islemleri_bastir();
+                    break;
+                case 2:
+                    if(!ileri){
+                        if(iterator.hasNext()){
+                            iterator.next();
+                            ileri=true;
+                        }
+                        else{
+                            System.out.println("Gidilecek yer kalmadı!");
+                        }
+                    }
+                    if(!iterator.hasNext()){
+                        System.out.println("Herhangi bir şehir bulunmuyor!");
+                    }
+                    else{
+                        System.out.println("Bulundugunuz sehir: " + iterator.next());
+                    }
+                    break;
+                case 3:
+                    if(ileri){
+                        if(iterator.hasPrevious()){
+                            iterator.previous();
+                            ileri=false;
+                        }
+                        else{
+                            System.out.println("Gidilecek yer kalmadı!");
+                        }
+                    }
+                    if(!iterator.hasPrevious()){
+                        System.out.println("Herhangi bir şehir bulunmuyor!");
+                    }
+                    else{
+                        if(!ileri){
+                           System.out.println("Gelinen sehir: "+ iterator.previous());
+                        }
+                    }
+                    break;
+                case 0:
+                    System.out.println("Cikis Yapiliyor...");
+                    cikis=true;
+                    break;
+                default:
+                    System.out.println("Hatali islem!");
+                    break;
+            }
+        }
+    }  
+}

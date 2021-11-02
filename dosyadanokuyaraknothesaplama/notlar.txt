@@ -1,0 +1,10 @@
+Hilal Nur Tek --> 100,96,87	93.6	AA
+Kemal Ermis --> 85,64,26	55.1	FF
+Pinar Dumlu --> 74,56,82	71.8	CC
+Ilyas Saba --> 85,64,52         65.5	DC
+Lale Duman --> 26,67,85         61.9	DD
+Aycan Bunak --> 56,86,95	80.6	BB
+Ulgen Pasa --> 85,75,46         66.4	DC
+Olcay Duman --> 75,85,95	86.0	BA
+Beyda Net --> 65,52,38          50.3	FF
+Burak Tek --> 85,95,100         94.0	AA
